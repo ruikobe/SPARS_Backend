@@ -8,7 +8,7 @@
     {{currentUserName}}<i class="el-icon-arrow-down el-icon--right home_userinfo"></i>
   </span>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item command="sysMsg">System message</el-dropdown-item>
+            <el-dropdown-item command="sysMsg">System Message</el-dropdown-item>
             <el-dropdown-item command="MyArticle">History Results</el-dropdown-item>
             <el-dropdown-item command="MyHome">My Stocks</el-dropdown-item>
             <el-dropdown-item command="logout" divided>Logout</el-dropdown-item>

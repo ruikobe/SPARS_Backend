@@ -1,7 +1,7 @@
 <template>
   <el-container v-loading="loading" class="post-article">
     <el-header class="header">
-      <el-select v-model="article.cid" placeholder="请选择文章栏目" style="width: 150px;">
+      <el-select v-model="article.cid" placeholder="Please select a category" style="width: 150px;">
         <el-option
           v-for="item in categories"
           :key="item.id"
@@ -9,7 +9,7 @@
           :value="item.id">
         </el-option>
       </el-select>
-      <el-input v-model="article.title" placeholder="请输入标题..." style="width: 400px;margin-left: 10px"></el-input>
+      <el-input v-model="article.title" placeholder="Enter a title..." style="width: 400px;margin-left: 10px"></el-input>
       <el-tag
         :key="tag"
         v-for="tag in article.dynamicTags"
@@ -31,17 +31,17 @@
     </el-header>
     <el-main class="main">
       <div id="editor">
-        <mavon-editor style="height: 100%;width: 100%;" ref=md @imgAdd="imgAdd"
+        <mavon-editor style="height: 100%;width: 100%;" ref=md @imgAdd="imgAdd" placeholder="Start to edit..."
                       @imgDel="imgDel" v-model="article.mdContent"></mavon-editor>
       </div>
       <div style="display: flex;align-items: center;margin-top: 15px;justify-content: flex-end">
-        <el-button @click="cancelEdit" v-if="from!=undefined">放弃修改</el-button>
+        <el-button @click="cancelEdit" v-if="from!=undefined">Cancel</el-button>
         <template v-if="from==undefined || from=='draft'">
-          <el-button @click="saveBlog(0)">保存到草稿箱</el-button>
-          <el-button type="primary" @click="saveBlog(1)">发表文章</el-button>
+          <el-button @click="saveBlog(0)">Save to draft</el-button>
+          <el-button type="primary" @click="saveBlog(1)">Post</el-button>
         </template>
         <template v-else-if="from==post">
-          <el-button type="primary" @click="saveBlog(1)">保存修改</el-button>
+          <el-button type="primary" @click="saveBlog(1)">Save</el-button>
         </template>
       </div>
     </el-main>
@@ -55,7 +55,7 @@
   import {uploadFileRequest} from '../utils/api'
   // Local Registration
   import {mavonEditor} from 'mavon-editor'
-  // 可以通过 mavonEditor.markdownIt 获取解析器markdown-it对象
+  //  mavonEditor.markdownIt obtain markdown-it object
   import 'mavon-editor/dist/css/index.css'
   import {isNotNullORBlank} from '../utils/utils'
 
@@ -79,11 +79,11 @@
               _this.article.dynamicTags.push(tags[i].tagName)
             }
           } else {
-            _this.$message({type: 'error', message: '页面加载失败!'})
+            _this.$message({type: 'error', message: 'Loading Failed!'})
           }
         }, resp=> {
           _this.loading = false;
-          _this.$message({type: 'error', message: '页面加载失败!'})
+          _this.$message({type: 'error', message: 'Loading Failed!'})
         })
       }
     },
@@ -96,7 +96,7 @@
       },
       saveBlog(state){
         if (!(isNotNullORBlank(this.article.title, this.article.mdContent, this.article.cid))) {
-          this.$message({type: 'error', message: '数据不能为空!'});
+          this.$message({type: 'error', message: 'Data can not be empty!'});
           return;
         }
         var _this = this;
@@ -113,7 +113,7 @@
           _this.loading = false;
           if (resp.status == 200 && resp.data.status == 'success') {
             _this.article.id = resp.data.msg;
-            _this.$message({type: 'success', message: state == 0 ? '保存成功!' : '发布成功!'});
+            _this.$message({type: 'success', message: state == 0 ? 'Save Successfully!' : 'Post Successfully!'});
 //            if (_this.from != undefined) {
             window.bus.$emit('blogTableReload')
 //            }
@@ -123,7 +123,7 @@
           }
         }, resp=> {
           _this.loading = false;
-          _this.$message({type: 'error', message: state == 0 ? '保存草稿失败!' : '博客发布失败!'});
+          _this.$message({type: 'error', message: state == 0 ? 'Save Failed!' : 'Post Failed!'});
         })
       },
       imgAdd(pos, $file){

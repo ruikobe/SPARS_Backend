@@ -11,7 +11,7 @@
         <el-tab-pane label="Draft" name="draft">
           <blog_table state="0" :showEdit="true" :showDelete="true" :showRestore="false" :activeName="activeName"></blog_table>
         </el-tab-pane>
-        <el-tab-pane label="Recycle" name="dustbin">
+        <el-tab-pane label="Trash" name="dustbin">
           <blog_table state="2" :showEdit="false" :showDelete="true" :showRestore="true" :activeName="activeName"></blog_table>
         </el-tab-pane>
         <el-tab-pane label="Management" name="blogmana" v-if="isAdmin">

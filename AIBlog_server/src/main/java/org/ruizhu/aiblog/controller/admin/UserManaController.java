@@ -39,27 +39,27 @@ public class UserManaController {
     @RequestMapping(value = "/user/enabled", method = RequestMethod.PUT)
     public RespBean updateUserEnabled(Boolean enabled, Long uid) {
         if (userService.updateUserEnabled(enabled, uid) == 1) {
-            return new RespBean("success", "更新成功!");
+            return new RespBean("success", "Update Successfully!");
         } else {
-            return new RespBean("error", "更新失败!");
+            return new RespBean("error", "Update Failed!");
         }
     }
 
     @RequestMapping(value = "/user/{uid}", method = RequestMethod.DELETE)
     public RespBean deleteUserById(@PathVariable Long uid) {
         if (userService.deleteUserById(uid) == 1) {
-            return new RespBean("success", "删除成功!");
+            return new RespBean("success", "Delete Successfully!");
         } else {
-            return new RespBean("error", "删除失败!");
+            return new RespBean("error", "Delete Failed!");
         }
     }
 
     @RequestMapping(value = "/user/role", method = RequestMethod.PUT)
     public RespBean updateUserRoles(Long[] rids, Long id) {
         if (userService.updateUserRoles(rids, id) == rids.length) {
-            return new RespBean("success", "更新成功!");
+            return new RespBean("success", "Update Successfully!");
         } else {
-            return new RespBean("error", "更新失败!");
+            return new RespBean("error", "Update Failed!");
         }
     }
 }

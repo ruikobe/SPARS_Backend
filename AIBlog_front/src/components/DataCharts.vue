@@ -31,10 +31,10 @@
           _this.$refs.dschart.options.xAxis.data = resp.data.categories;
           _this.$refs.dschart.options.series[0].data = resp.data.ds;
         } else {
-          _this.$message({type: 'error', message: '数据加载失败!'});
+          _this.$message({type: 'error', message: 'Data Loading Failed!'});
         }
       }, resp=> {
-        _this.$message({type: 'error', message: '数据加载失败!'});
+        _this.$message({type: 'error', message: 'Data Loading Failed!'});
       });
     },
     methods: {},

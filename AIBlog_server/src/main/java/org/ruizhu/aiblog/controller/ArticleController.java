@@ -23,7 +23,7 @@ import java.util.*;
 @RequestMapping("/article")
 public class ArticleController {
 
-    private SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+    private SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
 
     @Autowired
     ArticleService articleService;
