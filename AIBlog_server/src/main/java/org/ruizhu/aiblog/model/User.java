@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by sang on 2017/12/17.
+ * Created by Rui Zhu
  */
 public class User implements UserDetails {
     private Long id;

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * Created by sang on 2017/12/24.
+ * Created by Rui Zhu
  */
 @RestController
 @RequestMapping("/admin")

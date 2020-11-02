@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 /**
- * Created by sang on 2017/12/20.
+ * Created by Rui Zhu
  */
 public class Article {
     private Long id;

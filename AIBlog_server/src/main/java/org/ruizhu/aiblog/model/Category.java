@@ -3,7 +3,7 @@ package org.ruizhu.aiblog.model;
 import java.sql.Timestamp;
 
 /**
- * Created by sang on 2017/12/19.
+ * Created by Rui Zhu
  */
 public class Category {
     private Long id;

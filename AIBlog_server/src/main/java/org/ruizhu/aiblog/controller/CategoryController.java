@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * Admin Controller
+ * Created by Rui Zhu
  */
 @RestController
 @RequestMapping("/admin/category")

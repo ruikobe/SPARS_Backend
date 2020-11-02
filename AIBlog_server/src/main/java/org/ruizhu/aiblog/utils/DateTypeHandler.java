@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 
 /**
- * Created by sang on 2017/12/25.
+ * Created by Rui Zhu
  */
 @MappedJdbcTypes(JdbcType.DATE)
 @MappedTypes(String.class)

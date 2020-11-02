@@ -5,7 +5,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by sang on 2017/12/25.
+ * Created by Rui Zhu
  */
 @Component
 public class DataStatisticsComponent {

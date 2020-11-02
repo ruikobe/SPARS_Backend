@@ -4,7 +4,7 @@ import org.ruizhu.aiblog.model.User;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 /**
- * Created by sang on 2017/12/20.
+ * Created by Rui Zhu
  */
 public class Util {
     public static User getCurrentUser() {

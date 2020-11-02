@@ -7,7 +7,7 @@ import org.ruizhu.aiblog.model.Category;
 import java.util.List;
 
 /**
- * Created by sang on 2017/12/19.
+ * Created by Rui Zhu
  */
 @Mapper
 public interface CategoryMapper {

@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * Created by sang on 2017/12/21.
+ * Created by Rui Zhu
  */
 @Mapper
 public interface TagsMapper {

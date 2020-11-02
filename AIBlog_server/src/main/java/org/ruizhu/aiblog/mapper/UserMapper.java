@@ -8,7 +8,7 @@ import org.ruizhu.aiblog.model.User;
 import java.util.List;
 
 /**
- * Created by sang on 2017/12/17.
+ * Created by Rui Zhu
  */
 @Mapper
 public interface UserMapper {

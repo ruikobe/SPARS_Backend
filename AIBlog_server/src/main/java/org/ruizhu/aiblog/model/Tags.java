@@ -1,5 +1,8 @@
 package org.ruizhu.aiblog.model;
 
+/**
+ * Created by Rui Zhu
+ */
 public class Tags {
     private Long id;
     private String tagName;

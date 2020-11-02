@@ -1,5 +1,8 @@
 package org.ruizhu.aiblog.model;
 
+/**
+ * Created by Rui Zhu
+ */
 public class Role {
     private Long id;
     private String name;

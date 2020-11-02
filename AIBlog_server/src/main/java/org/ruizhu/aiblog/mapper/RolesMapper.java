@@ -7,7 +7,7 @@ import org.ruizhu.aiblog.model.Role;
 import java.util.List;
 
 /**
- * Created by sang on 2017/12/17.
+ * Created by Rui Zhu
  */
 @Mapper
 public interface RolesMapper {
