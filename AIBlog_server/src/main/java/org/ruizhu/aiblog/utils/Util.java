@@ -1,6 +1,6 @@
 package org.ruizhu.aiblog.utils;
 
-import org.ruizhu.aiblog.bean.User;
+import org.ruizhu.aiblog.model.User;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 /**

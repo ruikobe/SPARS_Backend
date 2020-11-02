@@ -1,7 +1,7 @@
 package org.ruizhu.aiblog.controller.admin;
 
-import org.ruizhu.aiblog.bean.Article;
-import org.ruizhu.aiblog.bean.RespBean;
+import org.ruizhu.aiblog.model.Article;
+import org.ruizhu.aiblog.model.RespBean;
 import org.ruizhu.aiblog.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

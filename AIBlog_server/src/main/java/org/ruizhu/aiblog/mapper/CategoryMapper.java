@@ -2,7 +2,7 @@ package org.ruizhu.aiblog.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.ruizhu.aiblog.bean.Category;
+import org.ruizhu.aiblog.model.Category;
 
 import java.util.List;
 

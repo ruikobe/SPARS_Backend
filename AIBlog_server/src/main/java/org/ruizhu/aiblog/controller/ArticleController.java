@@ -1,8 +1,8 @@
 package org.ruizhu.aiblog.controller;
 
 import org.apache.commons.io.IOUtils;
-import org.ruizhu.aiblog.bean.Article;
-import org.ruizhu.aiblog.bean.RespBean;
+import org.ruizhu.aiblog.model.Article;
+import org.ruizhu.aiblog.model.RespBean;
 import org.ruizhu.aiblog.service.ArticleService;
 import org.ruizhu.aiblog.utils.Util;
 import org.springframework.beans.factory.annotation.Autowired;

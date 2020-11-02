@@ -1,4 +1,4 @@
-package org.ruizhu.aiblog.bean;
+package org.ruizhu.aiblog.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;

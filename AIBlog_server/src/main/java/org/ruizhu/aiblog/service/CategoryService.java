@@ -1,6 +1,6 @@
 package org.ruizhu.aiblog.service;
 
-import org.ruizhu.aiblog.bean.Category;
+import org.ruizhu.aiblog.model.Category;
 import org.ruizhu.aiblog.mapper.CategoryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

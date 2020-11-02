@@ -1,7 +1,7 @@
 package org.ruizhu.aiblog.service;
 
 
-import org.ruizhu.aiblog.bean.Article;
+import org.ruizhu.aiblog.model.Article;
 import org.ruizhu.aiblog.mapper.ArticleMapper;
 import org.ruizhu.aiblog.mapper.TagsMapper;
 import org.ruizhu.aiblog.utils.Util;
@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.List;
 
 /**

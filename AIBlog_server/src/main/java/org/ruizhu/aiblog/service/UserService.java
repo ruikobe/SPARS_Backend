@@ -1,7 +1,7 @@
 package org.ruizhu.aiblog.service;
 
-import org.ruizhu.aiblog.bean.Role;
-import org.ruizhu.aiblog.bean.User;
+import org.ruizhu.aiblog.model.Role;
+import org.ruizhu.aiblog.model.User;
 import org.ruizhu.aiblog.mapper.RolesMapper;
 import org.ruizhu.aiblog.mapper.UserMapper;
 import org.ruizhu.aiblog.utils.Util;
@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.DigestUtils;
 
 import java.util.List;
 

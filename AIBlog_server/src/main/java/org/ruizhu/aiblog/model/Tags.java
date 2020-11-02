@@ -1,4 +1,4 @@
-package org.ruizhu.aiblog.bean;
+package org.ruizhu.aiblog.model;
 
 public class Tags {
     private Long id;
