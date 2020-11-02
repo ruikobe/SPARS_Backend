@@ -17,13 +17,13 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * Created by sang on 2017/12/20.
+ * Created by Rui Zhu
  */
 @RestController
 @RequestMapping("/article")
 public class ArticleController {
 
-    private SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 
     @Autowired
     ArticleService articleService;
@@ -34,14 +34,14 @@ public class ArticleController {
         if (result == 1) {
             return new RespBean("success", article.getId() + "");
         } else {
-            return new RespBean("error", article.getState() == 0 ? "文章保存失败!" : "文章发表失败!");
+            return new RespBean("error", article.getState() == 0 ? "Save Failed!" : "Post Failed!");
         }
     }
 
     /**
-     * 上传图片
+     * Upload images
      *
-     * @return 返回值为图片的地址
+     * @return return the address of images
      */
     @RequestMapping(value = "/uploadimg", method = RequestMethod.POST)
     public RespBean uploadImg(HttpServletRequest req, MultipartFile image) {
@@ -67,7 +67,7 @@ public class ArticleController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return new RespBean("error", "上传失败!");
+        return new RespBean("error", "Upload Failed!");
     }
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
@@ -88,17 +88,17 @@ public class ArticleController {
     @RequestMapping(value = "/dustbin", method = RequestMethod.PUT)
     public RespBean updateArticleState(Long[] aids, Integer state) {
         if (articleService.updateArticleState(aids, state) == aids.length) {
-            return new RespBean("success", "删除成功!");
+            return new RespBean("success", "Delete Successfully!");
         }
-        return new RespBean("error", "删除失败!");
+        return new RespBean("error", "Delete Failed!");
     }
 
     @RequestMapping(value = "/restore", method = RequestMethod.PUT)
     public RespBean restoreArticle(Integer articleId) {
         if (articleService.restoreArticle(articleId) == 1) {
-            return new RespBean("success", "还原成功!");
+            return new RespBean("success", "Restore Successfully!");
         }
-        return new RespBean("error", "还原失败!");
+        return new RespBean("error", "Restore Failed!");
     }
 
     @RequestMapping("/dataStatistics")

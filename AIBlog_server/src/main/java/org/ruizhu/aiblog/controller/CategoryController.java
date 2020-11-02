@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * 超级管理员专属Controller
+ * Admin Controller
  */
 @RestController
 @RequestMapping("/admin/category")
@@ -29,33 +29,33 @@ public class CategoryController {
     public RespBean deleteById(@PathVariable String ids) {
         boolean result = categoryService.deleteCategoryByIds(ids);
         if (result) {
-            return new RespBean("success", "删除成功!");
+            return new RespBean("success", "Delete Successfully!");
         }
-        return new RespBean("error", "删除失败!");
+        return new RespBean("error", "Delete Failed!");
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public RespBean addNewCate(Category category) {
 
         if ("".equals(category.getCateName()) || category.getCateName() == null) {
-            return new RespBean("error", "请输入栏目名称!");
+            return new RespBean("error", "Please enter a category name!");
         }
 
         int result = categoryService.addCategory(category);
 
         if (result == 1) {
-            return new RespBean("success", "添加成功!");
+            return new RespBean("success", "Add Successfully!");
         }
-        return new RespBean("error", "添加失败!");
+        return new RespBean("error", "Add Failed!");
     }
 
     @RequestMapping(value = "/", method = RequestMethod.PUT)
     public RespBean updateCate(Category category) {
         int i = categoryService.updateCategoryById(category);
         if (i == 1) {
-            return new RespBean("success", "修改成功!");
+            return new RespBean("success", "Edit Successfully!");
         }
-        return new RespBean("error", "修改失败!");
+        return new RespBean("error", "Edit Failed!");
     }
 }
 

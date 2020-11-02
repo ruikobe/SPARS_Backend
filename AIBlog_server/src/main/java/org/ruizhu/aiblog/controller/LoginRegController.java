@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by sang on 2017/12/17.
+ * Created by Rui Zhu
  */
 @RestController
 public class LoginRegController {
@@ -19,12 +19,12 @@ public class LoginRegController {
 
     @RequestMapping("/login_error")
     public RespBean loginError() {
-        return new RespBean("error", "登录失败!");
+        return new RespBean("error", "Login Failed!");
     }
 
     @RequestMapping("/login_success")
     public RespBean loginSuccess() {
-        return new RespBean("success", "登录成功!");
+        return new RespBean("success", "Login Successfully!");
     }
 
     /**
@@ -36,20 +36,20 @@ public class LoginRegController {
      */
     @RequestMapping("/login_page")
     public RespBean loginPage() {
-        return new RespBean("error", "尚未登录，请登录!");
+        return new RespBean("error", "Please login first!");
     }
 
     @PostMapping("/reg")
     public RespBean reg(User user) {
         int result = userService.reg(user);
         if (result == 0) {
-            //成功
-            return new RespBean("success", "注册成功!");
+            //Success
+            return new RespBean("success", "Register Successfully!");
         } else if (result == 1) {
-            return new RespBean("error", "用户名重复，注册失败!");
+            return new RespBean("error", "User exists. Register Failed!");
         } else {
-            //失败
-            return new RespBean("error", "注册失败!");
+            //Failed
+            return new RespBean("error", "Register Failed!");
         }
     }
 }

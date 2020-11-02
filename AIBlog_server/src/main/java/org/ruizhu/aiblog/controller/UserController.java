@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * Created by sang on 2017/12/24.
+ * Created by Rui Zhu
  */
 @RestController
 public class UserController {
@@ -49,9 +49,9 @@ public class UserController {
     @RequestMapping(value = "/updateUserEmail",method = RequestMethod.PUT)
     public RespBean updateUserEmail(String email) {
         if (userService.updateUserEmail(email) == 1) {
-            return new RespBean("success", "开启成功!");
+            return new RespBean("success", "Enable Successfully!");
         }
-        return new RespBean("error", "开启失败!");
+        return new RespBean("error", "Enable Failed!");
     }
 }
 
