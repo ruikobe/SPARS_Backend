@@ -33,7 +33,7 @@
           label="Created Time" align="left">
           <template slot-scope="scope">{{ scope.row.date | formatDate}}</template>
         </el-table-column>
-        <el-table-column label="操作" align="left">
+        <el-table-column label="Operations" align="left">
           <template slot-scope="scope">
             <el-button
               size="mini"
