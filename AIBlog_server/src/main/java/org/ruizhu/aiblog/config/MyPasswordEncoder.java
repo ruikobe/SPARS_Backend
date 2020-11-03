@@ -6,6 +6,7 @@ import org.springframework.util.DigestUtils;
 
 /**
  * Created by Rui Zhu
+ * Encode the password
  */
 @Component
 public class MyPasswordEncoder implements PasswordEncoder {

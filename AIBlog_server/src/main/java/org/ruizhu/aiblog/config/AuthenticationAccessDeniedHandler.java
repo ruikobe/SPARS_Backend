@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 
 /**
  * Created by Rui Zhu
+ * Handle authentication: access denied
  */
 public class AuthenticationAccessDeniedHandler implements AccessDeniedHandler {
     @Override

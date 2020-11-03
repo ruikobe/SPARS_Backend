@@ -24,6 +24,8 @@ import java.io.PrintWriter;
 
 /**
  * Created by Rui Zhu
+ * Custom Exceptions
+ * Set authentication, access control
  */
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {

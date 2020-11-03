@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * Created by Rui Zhu
+ * Main controller: home page
  */
 @Controller
 public class MainController {
