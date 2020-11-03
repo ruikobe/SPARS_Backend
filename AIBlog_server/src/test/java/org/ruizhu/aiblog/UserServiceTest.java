@@ -17,7 +17,17 @@ public class UserServiceTest {
     UserService userService;
 
     @Test
-    public void existsByNicknameTest(){
+    void getUserByNickname(){
+        assertNotNull(userService.getUserByNickname("Rui"));
+    }
+
+    @Test
+    void getUserById(){
+        assertNotNull(userService.getUserById((long)1));
+    }
+
+    @Test
+    void getAllRoleTest(){
         assertNotNull(userService.getAllRole());
     }
 }
