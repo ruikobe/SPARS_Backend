@@ -28,9 +28,9 @@ public class LoginRegController {
     }
 
     /**
-     * 如果自动跳转到这个页面，说明用户未登录，返回相应的提示即可
+     * If the user is not logged in, it would automatically jump to this page, return the message to the user.
      * <p>
-     * 如果要支持表单登录，可以在这个方法中判断请求的类型，进而决定返回JSON还是HTML页面
+     * This method decides to return JSON or HTML page based on the type of request.
      *
      * @return
      */

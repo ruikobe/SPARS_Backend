@@ -24,24 +24,23 @@ public class ArticleService {
     TagsMapper tagsMapper;
 
     public int addNewArticle(Article article) {
-        //处理文章摘要
+        //Process the summary of the article
         if (article.getSummary() == null || "".equals(article.getSummary())) {
-            //直接截取
+            //Get the substring of the article content directly
             String stripHtml = stripHtml(article.getHtmlContent());
             article.setSummary(stripHtml.substring(0, stripHtml.length() > 50 ? 50 : stripHtml.length()));
         }
         if (article.getId() == -1) {
-            //添加操作
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             if (article.getState() == 1) {
-                //设置发表日期
+                //Set the publish time
                 article.setPublishDate(timestamp);
             }
             article.setEditTime(timestamp);
-            //设置当前用户
+            //Set the current user
             article.setUid(Util.getCurrentUser().getId());
             int i = articleMapper.addNewArticle(article);
-            //打标签
+            //Set tags
             String[] dynamicTags = article.getDynamicTags();
             if (dynamicTags != null && dynamicTags.length > 0) {
                 int tags = addTagsToArticle(dynamicTags, article.getId());
@@ -53,13 +52,13 @@ public class ArticleService {
         } else {
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             if (article.getState() == 1) {
-                //设置发表日期
+                //Set publish date
                 article.setPublishDate(timestamp);
             }
-            //更新
+            //Update
             article.setEditTime(new Timestamp(System.currentTimeMillis()));
             int i = articleMapper.updateArticle(article);
-            //修改标签
+            //Update tags
             String[] dynamicTags = article.getDynamicTags();
             if (dynamicTags != null && dynamicTags.length > 0) {
                 int tags = addTagsToArticle(dynamicTags, article.getId());
@@ -72,13 +71,13 @@ public class ArticleService {
     }
 
     private int addTagsToArticle(String[] dynamicTags, Long aid) {
-        //1.删除该文章目前所有的标签
+        //1.Delete all tags
         tagsMapper.deleteTagsByAid(aid);
-        //2.将上传上来的标签全部存入数据库
+        //2.Save all tags to the database
         tagsMapper.saveTags(dynamicTags);
-        //3.查询这些标签的id
+        //3.Query ids of tags
         List<Long> tIds = tagsMapper.getTagsIdByTagName(dynamicTags);
-        //4.重新给文章设置标签
+        //4.Update tags
         int i = tagsMapper.saveTags2ArticleTags(tIds, aid);
         return i == dynamicTags.length ? i : -1;
     }
@@ -109,12 +108,12 @@ public class ArticleService {
         if (state == 2) {
             return articleMapper.deleteArticleById(aids);
         } else {
-            return articleMapper.updateArticleState(aids, 2);//放入到回收站中
+            return articleMapper.updateArticleState(aids, 2);//Put the article to the Trash
         }
     }
 
     public int restoreArticle(Integer articleId) {
-        return articleMapper.updateArticleStateById(articleId, 1); // 从回收站还原在原处
+        return articleMapper.updateArticleStateById(articleId, 1); // Restore the article from the Trash
     }
 
     public Article getArticleById(Long aid) {
@@ -128,7 +127,7 @@ public class ArticleService {
     }
 
     /**
-     * 获取最近七天的日期
+     * Obtain the dates of latest 7 days
      * @return
      */
     public List<String> getCategories() {
@@ -136,7 +135,7 @@ public class ArticleService {
     }
 
     /**
-     * 获取最近七天的数据
+     * Obtain the data of latest 7 days
      * @return
      */
     public List<Integer> getDataStatistics() {

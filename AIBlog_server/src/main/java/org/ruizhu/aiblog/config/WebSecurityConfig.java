@@ -40,9 +40,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/reg").permitAll()
                 .antMatchers("/admin/category/all").authenticated()
-                .antMatchers("/admin/**").hasRole("Admin")///admin/**的URL都需要有超级管理员角色，如果使用.hasAuthority()方法来配置，需要在参数中加上ROLE_,如下.hasAuthority("ROLE_超级管理员")
+                .antMatchers("/admin/**").hasRole("Admin")//The URL with /admin/** require Admin role. If use .hasAuthority()，should use ROLE_:.hasAuthority("ROLE_Admin")
                 .anyRequest().authenticated().and()
-                //除注册、登录路径外的其他的路径都是登录后即可访问
+                //Require the login to access the web pages, except Login and Register pages.
                 .formLogin().loginPage("/login_page").successHandler(new AuthenticationSuccessHandler() {
             @Override
             public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
