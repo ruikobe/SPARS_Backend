@@ -2,7 +2,7 @@
   <el-container class="article_list">
     <el-main class="main">
       <el-tabs v-model="activeName" @tab-click="handleClick" type="card">
-        <el-tab-pane label="All Articles" name="all">
+        <el-tab-pane label="All News" name="all">
           <blog_table state="-1" :showEdit="false" :showDelete="false" :showRestore="false" :activeName="activeName"></blog_table>
         </el-tab-pane>
         <el-tab-pane label="Posted" name="post">

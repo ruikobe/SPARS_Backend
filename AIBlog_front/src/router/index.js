@@ -33,19 +33,19 @@ export default new Router({
     }, {
       path: '/home',
       component: Home,
-      name: 'Article Management',
+      name: 'News Management',
       iconCls: 'fa fa-file-text-o',
       children: [
         {
           path: '/articleList',
-          name: 'Articles List',
+          name: 'News List',
           component: ArticleList,
           meta: {
             keepAlive: true
           }
         }, {
           path: '/postArticle',
-          name: 'Post Articles',
+          name: 'Post News',
           component: PostArticle,
           meta: {
             keepAlive: false
@@ -88,20 +88,20 @@ export default new Router({
         {
           path: '/cateMana',
           iconCls: 'fa fa-reorder',
-          name: 'Category',
+          name: 'Companies & Stocks',
           component: CateMana
         }
       ]
     }, {
       path: '/home',
       component: Home,
-      name: 'Data Results',
+      name: 'Prediction Results',
       iconCls: 'fa fa-bar-chart',
       children: [
         {
           path: '/charts',
           iconCls: 'fa fa-bar-chart',
-          name: 'Data Results',
+          name: 'Prediction Results',
           component: DataCharts
         }
       ]

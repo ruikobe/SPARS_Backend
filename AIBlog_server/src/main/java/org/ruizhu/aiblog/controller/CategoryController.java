@@ -38,7 +38,7 @@ public class CategoryController {
     public RespBean addNewCate(Category category) {
 
         if ("".equals(category.getCateName()) || category.getCateName() == null) {
-            return new RespBean("error", "Please enter a category name!");
+            return new RespBean("error", "Please enter a company name!");
         }
 
         int result = categoryService.addCategory(category);

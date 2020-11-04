@@ -2,10 +2,10 @@
   <el-container>
     <el-header class="cate_mana_header">
       <el-input
-        placeholder="Please enter the category name"
+        placeholder="Please enter the company name"
         v-model="cateName" style="width: 200px;">
       </el-input>
-      <el-button type="primary" size="medium" style="margin-left: 10px" @click="addNewCate">New Category</el-button>
+      <el-button type="primary" size="medium" style="margin-left: 10px" @click="addNewCate">New Company & Stock</el-button>
     </el-header>
     <el-main class="cate_mana_main">
       <el-table
@@ -95,7 +95,7 @@
           }
           _this.deleteCate(ids.substring(0, ids.length - 1));
         }).catch(() => {
-          //取消
+          //Cancel
           _this.loading = false;
         });
       },
@@ -109,7 +109,7 @@
           inputValue: row.cateName,
           cancelButtonText: 'Cancel'
         }).then(({value}) => {
-          //value就是输入值
+          //value
           if (value == null || value.length == 0) {
             _this.$message({
               type: 'info',
@@ -170,7 +170,7 @@
           } else if (resp.response.status == 500) {
             _this.$message({
               type: 'error',
-              message: 'There are articles in this category, you can not delete this category!'
+              message: 'There are News in this category, you can not delete this company!'
             });
           }
         })
