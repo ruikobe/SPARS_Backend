@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 
 /**
  * Created by Rui Zhu
+ * Format data
  */
 @MappedJdbcTypes(JdbcType.DATE)
 @MappedTypes(String.class)
