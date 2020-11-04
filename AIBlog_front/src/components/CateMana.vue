@@ -170,7 +170,7 @@
           } else if (resp.response.status == 500) {
             _this.$message({
               type: 'error',
-              message: 'There are News in this category, you can not delete this company!'
+              message: 'There are News in this company, you can not delete this company!'
             });
           }
         })
